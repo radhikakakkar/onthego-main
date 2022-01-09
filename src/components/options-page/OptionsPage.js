@@ -27,7 +27,6 @@ function OptionsPage() {
             All Complaints
           </button>
         </div>
-        <p className="info">Choose to proceed</p>
       </div>
     </div>
   );

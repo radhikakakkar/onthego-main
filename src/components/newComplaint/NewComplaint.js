@@ -26,6 +26,12 @@ function NewComplaint({ add_new_complaint }) {
 
   const addImage = (event) => {
       newImage = event.target.files[0];
+      const imagePreview = document.getElementById('imagePreview');
+      const reader = new FileReader();
+            reader.addEventListener("load", function () {
+                imagePreview.setAttribute("src", this.result);
+            });
+            reader.readAsDataURL(newImage);
   }
 
   function locate() {
@@ -71,6 +77,7 @@ function NewComplaint({ add_new_complaint }) {
         </div>
 
         <div className="img-container">
+          <img src="" id="imagePreview" style={{height:"300px"}}></img>
           <label htmlFor="imageUpload"><h1><i class="fas fa-camera"></i></h1></label>
           <input type="file" name="image" id="imageUpload" accept="image/*" capture="environment" onChange={addImage} ></input>
         </div>
