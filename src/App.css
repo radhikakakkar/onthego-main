@@ -1,0 +1,8 @@
+body {
+  font-family: "arimo";
+}
+hr {
+  margin: 20px 40px;
+  color: grey;
+  height: 2px !important;
+}

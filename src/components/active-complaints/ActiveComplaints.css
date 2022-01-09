@@ -1,0 +1,23 @@
+.active-complaints-container {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.active-complaints-header {
+  font-size: 4em;
+  margin-top: 10%;
+}
+.new-complaint-btn {
+  border: 1px solid #f5a934;
+  border-radius: 30px;
+  width: 50%;
+  background: #f5a934;
+  padding: 10px 20px;
+  font-size: 4em;
+  color: white;
+  bottom: 30%;
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+}

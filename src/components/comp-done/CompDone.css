@@ -1,0 +1,40 @@
+.complaint-done-container {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.comp-done-header {
+  font-size: 4em;
+  margin-top: 10%;
+}
+.complaint-done-body {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.complaint-done-body div {
+  margin: 10%;
+}
+.comp-done-text {
+  font-size: 4em;
+  text-align: center;
+}
+#correct {
+  font-size: 20em;
+  color: #3586fb;
+  font-size: 16em;
+}
+.view-btn {
+  width: 54%;
+  color: white;
+  padding: 10px 20px;
+  font-size: 4em;
+  background-color: #f5a934;
+  bottom: 30%;
+  position: unset;
+  border: 1px solid white;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}

@@ -1,0 +1,18 @@
+.complaint-snippet-container {
+}
+.complaint-header {
+  font-size: 3em;
+}
+.complaint-snippet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.complaint-snippet div {
+    margin: 2% 10%;
+}
+
+.complaint-location {
+  font-size: 2.5em;
+  color: grey;
+}
