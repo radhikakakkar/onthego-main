@@ -10,29 +10,32 @@ function NewComplaint({ add_new_complaint }) {
   function new_complaint(e) {
     e.preventDefault();
     const title = document.getElementById("complaint-title-input").value;
-    const description = document.getElementById("complaint-description-input").value;
+    const description = document.getElementById(
+      "complaint-description-input"
+    ).value;
     const formData = new FormData();
-    formData.append('title', title);
-    formData.append('description', description);
-    formData.append('latitude', latitude);
-    formData.append('longitude', longitude);
-    formData.append('image', newImage);
-    axios.post('http://localhost:5000/save-complaint', formData)
-    .then(res => navigate("/complaint-registered"))
-    .catch(function (response) {
-      console.log(response);
-    });
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("latitude", latitude);
+    formData.append("longitude", longitude);
+    formData.append("image", newImage);
+    axios
+      .post("https://onthego-server.herokuapp.com/save-complaint", formData)
+      .then((res) => navigate("/complaint-registered"))
+      .catch((err) => {
+        console.log(err.response.data);
+      });
   }
 
   const addImage = (event) => {
-      newImage = event.target.files[0];
-      const imagePreview = document.getElementById('imagePreview');
-      const reader = new FileReader();
-            reader.addEventListener("load", function () {
-                imagePreview.setAttribute("src", this.result);
-            });
-            reader.readAsDataURL(newImage);
-  }
+    newImage = event.target.files[0];
+    const imagePreview = document.getElementById("imagePreview");
+    const reader = new FileReader();
+    reader.addEventListener("load", function () {
+      imagePreview.setAttribute("src", this.result);
+    });
+    reader.readAsDataURL(newImage);
+  };
 
   function locate() {
     function success(position) {
@@ -60,7 +63,12 @@ function NewComplaint({ add_new_complaint }) {
       <span className="new-complaint-header">Register your complaint here</span>
       <hr></hr>
 
-      <form method="POST" className="complaint-form" onSubmit={new_complaint} onLoad={locate()}>
+      <form
+        method="POST"
+        className="complaint-form"
+        onSubmit={new_complaint}
+        onLoad={locate()}
+      >
         <div id="current-location-text">
           <p>Your Location:</p>
           <span id="latitude"></span>
@@ -77,9 +85,20 @@ function NewComplaint({ add_new_complaint }) {
         </div>
 
         <div className="img-container">
-          <img src="" id="imagePreview" style={{height:"300px"}}></img>
-          <label htmlFor="imageUpload"><h1><i class="fas fa-camera"></i></h1></label>
-          <input type="file" name="image" id="imageUpload" accept="image/*" capture="environment" onChange={addImage} ></input>
+          <img src="" id="imagePreview" style={{ height: "300px" }}></img>
+          <label htmlFor="imageUpload">
+            <h1>
+              <i class="fas fa-camera"></i>
+            </h1>
+          </label>
+          <input
+            type="file"
+            name="image"
+            id="imageUpload"
+            accept="image/*"
+            capture="environment"
+            onChange={addImage}
+          ></input>
         </div>
 
         <div className="complaint-description">
@@ -91,7 +110,9 @@ function NewComplaint({ add_new_complaint }) {
             id="complaint-description-input"
           ></textarea>
         </div>
-        <button  type="submit" className="submit-form">Submit</button>
+        <button type="submit" className="submit-form">
+          Submit
+        </button>
       </form>
     </div>
   );

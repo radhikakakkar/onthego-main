@@ -11,10 +11,12 @@ function ActiveComplaints(complaints) {
 
   const [list, setList] = useState([]);
 
-  async function fetchData(){
-    const res = await (await axios.get('http://localhost:5000/')).data.data;
+  async function fetchData() {
+    const res = await (
+      await axios.get("https://onthego-server.herokuapp.com/")
+    ).data.data;
     setList(res);
-  };
+  }
 
   fetchData();
 
@@ -24,9 +26,16 @@ function ActiveComplaints(complaints) {
       <span className="active-complaints-header">Active Complaints</span>
       <hr></hr>
       <div className="cardList">
-            {list.map((item) => (<ComplaintItem key={item._id} complaint_data={item} />))}
-        </div>
-      <button onClick={() => navigate("/create-complaint")}className="new-complaint-btn">New Complaint</button>
+        {list.map((item) => (
+          <ComplaintItem key={item._id} complaint_data={item} />
+        ))}
+      </div>
+      <button
+        onClick={() => navigate("/create-complaint")}
+        className="new-complaint-btn"
+      >
+        New Complaint
+      </button>
     </div>
   );
 }
