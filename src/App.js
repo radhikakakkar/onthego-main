@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import ActiveComplaints from "./components/active-complaints/ActiveComplaints";
 import CompDone from "./components/comp-done/CompDone";
-import NewComplaint from "./components/newComplaint/NewComplaint";
+import NewComplaint from "./components/new-complaint/NewComplaint";
 import OptionsPage from "./components/options-page/OptionsPage";
 import ComplaintDeets from "./components/complaint-details/ComplaintDeets";
 import FirstPage from "./components/first-page/FirstPage";

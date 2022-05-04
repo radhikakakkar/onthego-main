@@ -1,2 +1,0 @@
-heroku git:remote -a onthego
-git push heroku master
