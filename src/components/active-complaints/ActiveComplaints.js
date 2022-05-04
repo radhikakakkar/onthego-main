@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import ComplaintItem from "../Complaint-item/ComplaintItem";
+import ComplaintItem from "../complaint-item/ComplaintItem";
 import CompHeader from "../complaints-header/CompHeader";
 import "./ActiveComplaints.css";
 import { useNavigate } from "react-router-dom";

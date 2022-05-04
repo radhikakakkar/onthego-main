@@ -2,6 +2,8 @@ import axios from "axios";
 import CompHeader from "../complaints-header/CompHeader";
 import "./NewComplaint.css";
 import { useNavigate } from "react-router-dom";
+import { TextInputField } from 'evergreen-ui'
+
 
 function NewComplaint({ add_new_complaint }) {
   const navigate = useNavigate();
@@ -82,6 +84,12 @@ function NewComplaint({ add_new_complaint }) {
             className="new-complaint-input"
             placeholder="Complaint Title"
           ></input>
+          {/* <TextInputField
+            inputWidth={400}
+            label="Complaint Title"
+            description="Enter a titl for your complaint"
+            placeholder="complaint title"
+          /> */}
         </div>
 
         <div className="img-container">

@@ -11,7 +11,7 @@ function OptionsPage() {
       <div className="options-display-div"></div>
       <div className="options-content-div">
         <Header />
-        <div className="options">
+        {/* <div className="options"> */}
           <button
             className="options-btn"
             id="new-complaint"
@@ -26,7 +26,7 @@ function OptionsPage() {
           >
             All Complaints
           </button>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );

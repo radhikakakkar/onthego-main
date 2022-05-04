@@ -17,8 +17,8 @@ function FirstPage() {
           <p>fixing one hinderance a time</p>
         </div>
         <button
-          onClick={() => navigate("/introduction/page-two")}
-          className="next-btn"
+          onClick={() => navigate("/about-us-2")}
+          className="white-btn"
         >
           Continue<i className="fas fa-arrow-right"></i>
         </button>

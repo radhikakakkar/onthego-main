@@ -29,8 +29,8 @@ function FourthPage() {
           <p>feature</p>
         </div>
         <button
-          className="join-btn"
-          onClick={() => navigate("/choose-to-proceed")}
+          className="orange-btn"
+          onClick={() => navigate("/")}
         >
           Join Us
         </button>
