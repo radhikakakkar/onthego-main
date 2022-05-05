@@ -2,7 +2,7 @@ import axios from "axios";
 import CompHeader from "../complaints-header/CompHeader";
 import "./NewComplaint.css";
 import { useNavigate } from "react-router-dom";
-import { TextInputField } from 'evergreen-ui'
+// import { TextInputField } from 'evergreen-ui'
 
 
 function NewComplaint({ add_new_complaint }) {
@@ -32,11 +32,16 @@ function NewComplaint({ add_new_complaint }) {
   const addImage = (event) => {
     newImage = event.target.files[0];
     const imagePreview = document.getElementById("imagePreview");
+    const imageIcon = document.getElementsByClassName("imageUpload-label");
     const reader = new FileReader();
     reader.addEventListener("load", function () {
       imagePreview.setAttribute("src", this.result);
+      imagePreview.style.visibility = "visible";
+      imagePreview.style.width = "40%";
+      imageIcon.style.width = "60%";
     });
     reader.readAsDataURL(newImage);
+
   };
 
   function locate() {
@@ -69,21 +74,28 @@ function NewComplaint({ add_new_complaint }) {
         method="POST"
         className="complaint-form"
         onSubmit={new_complaint}
-        onLoad={locate()}
+      // onLoad={locate()}
       >
-        <div id="current-location-text">
+        <div id="current-location-field">
           <p>Your Location:</p>
-          <span id="latitude"></span>
-          <span id="longitude"></span>
+          <div className="current-location">
+            <span id="latitude"></span>
+            <span id="longitude"></span>
+          </div>
+
         </div>
         <div className="complaint-title">
           <input
             type="text"
             name="comaplaint-title-input"
+            className="form-control"
             id="complaint-title-input"
-            className="new-complaint-input"
-            placeholder="Complaint Title"
+            placeholder=" "
+            size={50}
+
+          // style=" font-size:2em; "
           ></input>
+          <label className="form-label">Complaint Title</label>
           {/* <TextInputField
             inputWidth={400}
             label="Complaint Title"
@@ -93,12 +105,15 @@ function NewComplaint({ add_new_complaint }) {
         </div>
 
         <div className="img-container">
+
           <img src="" id="imagePreview" style={{ height: "300px" }}></img>
-          <label htmlFor="imageUpload">
-            <h1>
+
+          <label className="imageUpload-label" htmlFor="imageUpload">
+            <div className="image-icon">
               <i class="fas fa-camera"></i>
-            </h1>
+            </div>
           </label>
+
           <input
             type="file"
             name="image"
@@ -107,18 +122,23 @@ function NewComplaint({ add_new_complaint }) {
             capture="environment"
             onChange={addImage}
           ></input>
+          
         </div>
 
         <div className="complaint-description">
           <textarea
             type="text"
-            placeholder="Complaint Description"
-            className="complaint-description-input"
+            placeholder=" "
+            size={150}
+            className="form-control"
             name="complaint-description-input"
             id="complaint-description-input"
+
           ></textarea>
+          <label className="form-label-t">Complaint Description</label>
+
         </div>
-        <button type="submit" className="submit-form">
+        <button type="submit" className="orange-btn">
           Submit
         </button>
       </form>
